@@ -43,7 +43,7 @@ def assign_attributes(stats):
         """
         print("Scores to assign [Index|Score]")
         for index, score in enumerate(stats):
-            print(f"[{index+1} | {score}]", end=' ')
+            print(f"[{index+1} | {score}]", end='')
         print()
 
     ability_scores = {"strength": 0,
@@ -79,6 +79,18 @@ def ability_bonuses(ability_scores):
     return ability_scores
 
 def select_race(races, ability_scores):
+    """In order to get the final ability scores, we will need to know the characters race
+    
+    Arguments:
+        races {dict} -- A dictionary containing the racial information loaded in from the
+        races.json file in the data folder
+        ability_scores {dict} -- The current value of the characters ability scores so they
+        can be modified by racial modifiers
+    
+    Returns:
+        dict -- A dictionary with the characters race
+        dict -- A dictionary with the modified ability scores
+    """
 
     race_list = ['Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Half-Orc', 'Halfling', 'Human']
     for index, race in enumerate(race_list):
