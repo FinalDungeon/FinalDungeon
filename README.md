@@ -22,7 +22,7 @@ A top-down RPG using Python and Pygame
   - [ ] Merchants
   - [ ] Essential
 - [ ] Graphics and controls
-  - [X] Sprite creation or selection (Artist or [OpenGameArt.org](https://opengameart.org) __Both__
+  - [X] Sprite creation or selection (Artist or [OpenGameArt.org](https://opengameart.org) __Both__)
   - [ ] Keyboard or game controller or both? __Both__
     - [ ] Keyboard
     - [ ] Gamepad
