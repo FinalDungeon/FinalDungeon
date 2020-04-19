@@ -1,0 +1,62 @@
+{"race" :
+    {
+        "dwarf": {
+            "name" : "Dwarf",
+            "abilitymod" : {
+                "constitution" : 2,
+                "charisma" : -2
+            },
+            "size" : "medium",
+            "speed" : 20
+        },
+        "elf" : {
+            "name" : "Elf",
+            "abilitymod" : {
+                "dexterity" : 2,
+                "constitution" : -2
+            },
+            "size" : "medium",
+            "speed" : 30
+        },
+        "gnome" : {
+            "name" : "Gnome",
+            "abilitymod" : {
+                "constitution" : 2,
+                "strength" : -2
+            },
+            "size" : "small",
+            "speed" : 20
+        },
+        "half-elf" : {
+            "name" : "Half-Elf",
+            "abilitymod" : null,
+            "size" : "medium",
+            "speed": 30
+        },
+        "half-orc" : {
+            "name" : "Half-Orc",
+            "abilitymod" : {
+                "strength" : 2,
+                "intelligence" : -2,
+                "charisma" : -2
+            },
+            "size" : "medium",
+            "speed" : 30
+        },
+        "halfling" : {
+            "name" : "Halfling",
+            "abilitymod" : {
+                "dexterity" : 2,
+                "strength" : -2
+            },
+            "size" : "small",
+            "speed" : 20
+        },
+        "human" : {
+            "name" : "Human",
+            "abilitymod" : null,
+            "size" : "medium",
+            "speed" : 30
+        }
+    }
+}
