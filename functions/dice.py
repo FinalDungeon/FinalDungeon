@@ -20,3 +20,6 @@ def roll(dice):
         return randint(int(number),int(number)*int(die)) + int(bonus)
     number, die = dice.split('d')
     return randint(int(number),int(number)*int(die))
+
+def ability_check(ability_mod):
+    return roll(f'1d20+{str(ability_mod)}')
