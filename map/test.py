@@ -1,9 +1,10 @@
-import pytmx, pygame, render
+import pytmx, pygame, render, pyautogui, mapping
 
 pygame.init()
  
 WHITE = (255, 255, 255)
-size = (700, 500)
+screenSize = int(pyautogui.size()[1]/1.5)
+size = (screenSize, int(screenSize*.71))
 screen = pygame.display.set_mode(size)
  
 pygame.display.set_caption("My Game")
@@ -14,20 +15,43 @@ done = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
 
-map_image = render.loadTMX("test.tmx")
+gameMap = mapping.map("test.tmx", 'character.png', (10,10))
+
+moveX = 0
+moveY = 0
+velocity = 2
 
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a:
+                moveX = -velocity
+            if event.key == pygame.K_d:
+                moveX = velocity
+            if event.key == pygame.K_w:
+                moveY = -velocity
+            if event.key == pygame.K_s:
+                moveY = velocity
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_a:
+                moveX = 0
+            if event.key == pygame.K_d:
+                moveX = 0
+            if event.key == pygame.K_w:
+                moveY = 0
+            if event.key == pygame.K_s:
+                moveY = 0
  
     # --- Game logic should go here
+    gameMap.move(moveX, moveY)
  
     # --- Screen-clearing code goes here
-    screen.fill(WHITE)
+    gameMap.drawMap(screen, "test.tmx")
  
     # --- Drawing code should go here
-    screen.blit(map_image, (0,0))
+    gameMap.drawMainCharacter(screen)
 
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
