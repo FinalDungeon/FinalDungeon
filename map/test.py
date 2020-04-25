@@ -36,13 +36,17 @@ while not done:
                 moveY = velocity
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_a:
-                moveX = 0
+                if moveX != velocity:
+                    moveX = 0
             if event.key == pygame.K_d:
-                moveX = 0
+                if moveX != -velocity:
+                    moveX = 0
             if event.key == pygame.K_w:
-                moveY = 0
+                if moveY != velocity:
+                    moveY = 0
             if event.key == pygame.K_s:
-                moveY = 0
+                if moveY != -velocity:
+                    moveY = 0
  
     # --- Game logic should go here
     gameMap.move(moveX, moveY)
